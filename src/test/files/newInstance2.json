@@ -1,0 +1,53 @@
+{
+
+  "registerType": "03.012.002_47533_ComSoLd",
+  "mdmCode": "9875456",
+  "contractNumber": "18",
+  "contractDate": "2024-03-29",
+  "priority":"00",
+  "interestRatePenalty": 20,
+  "minimalBalance": 100,
+  "thresholdAmount": 1000,
+  "accountingDetails": "реквизиты выплаты",
+  "rateType": "0",
+  "taxPercentageRate": 15,
+  "technicalOverdraftLimitAmount": 0,
+  "contractId": 456,
+  "branchCode": "0022",
+  "isoCurrencyCode": "800",
+  "urgencyCode": "00",
+  "referenceCode": 987654,
+  "additionalPropertiesVip": {
+    "data": [
+      {
+        "key": "counter",
+        "value": "123",
+        "name": "счетчик"
+      }
+    ]
+  },
+  "agreements": [
+    {
+      "generalAgreemetId": "65432233",
+      "supplementaryAgreementId": "554",
+      "arrangementType": "ЕЖО",
+      "shedulerJobId": 45654,
+      "number": "987",
+      "openingDate": "2024-03-22",
+      "validityDuration": 15,
+      "cancellationReason": "причина расторжения",
+      "status": "открыт"
+    },
+    {
+      "generalAgreemetId": "65432231",
+      "supplementaryAgreementId": "54654",
+      "arrangementType": "ЕЖО",
+      "shedulerJobId": 45654,
+      "number": "987",
+      "openingDate": "2024-03-22",
+      "validityDuration": 15,
+      "cancellationReason": "причина расторжения",
+      "status": "открыт"
+    }
+  ]
+}
