@@ -18,11 +18,11 @@ public class RefProductRegisterType {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "tpp_ref_product_register_type_internal_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    Integer internal_id;
-    String value;
-    String register_type_name;
-    String product_class_code;
-    Date register_type_start_date;
-    Date register_type_end_date;
-    String account_type;
+    private Integer internal_id;
+    private String value;
+    private String register_type_name;
+    private String product_class_code;
+    private Date register_type_start_date;
+    private Date register_type_end_date;
+    private String account_type;
 }

@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 @AllArgsConstructor
 @Getter
 public class ResponseSettlementAccountService {
-    HttpStatus status;
-    String answer;
-    String errorMessage;
+    private   HttpStatus status;
+    private String answer;
 }

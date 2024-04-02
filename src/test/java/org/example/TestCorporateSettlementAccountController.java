@@ -62,7 +62,7 @@ public class TestCorporateSettlementAccountController {
 
     @Test
     void testGetErrorWithoutInstanceID(){
-        String jsonString ="{\"registryTypeCode\":\"03.012.002_47533_ComSoLd\",\"currencyCode\":\"800}";
+        String jsonString ="{\"registryTypeCode\":\"03.012.002_47533_ComSoLd\",\"currencyCode\":\"800\"}";
          given()
                 .contentType(ContentType.JSON)
                 .body(jsonString)
@@ -72,7 +72,7 @@ public class TestCorporateSettlementAccountController {
     }
     @Test
     void testGetErrorDoubleInstance() {
-        ProductRegister productRegister = new ProductRegister((Integer) null, 26L,	"03.012.002_47533_ComSoLd",	1L,	"800",	"OPEN","4761");
+        ProductRegister productRegister = new ProductRegister((Integer) null, 26,	"03.012.002_47533_ComSoLd",	1L,	"800",	"OPEN","4761");
         productRegisterRepository.save(productRegister );
 
         String jsonString = "{\"instanceID\": 26,\"registryTypeCode\":\"03.012.002_47533_ComSoLd\"}";
@@ -85,7 +85,7 @@ public class TestCorporateSettlementAccountController {
     }
     @Test
     void testGetErrorNotFoundProductCode() {
-        ProductRegister productRegister = new ProductRegister((Integer) null, 26L,	"03.012.002_47533_ComSoLd",	1L,	"800",	"OPEN","4761");
+        ProductRegister productRegister = new ProductRegister((Integer) null, 26,	"03.012.002_47533_ComSoLd",	1L,	"800",	"OPEN","4761");
         productRegisterRepository.save(productRegister );
         System.out.println(refProductRegisterTypeRepository.findAll());
 

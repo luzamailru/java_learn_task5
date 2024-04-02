@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class OptionalAttribute {
-    String key;
-    String value;
-    String name;
+    private String key;
+    private  String value;
+    private  String name;
 }

@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface AccountRepository extends JpaRepository<Account,Long> {
     @Query(value="select *from account where account_pool_id=?", nativeQuery = true)
-    List<Account> findByPoolId(int accountPoolId);
+    List<Account> findByAccountPoolId(int accountPoolId);
 
 }

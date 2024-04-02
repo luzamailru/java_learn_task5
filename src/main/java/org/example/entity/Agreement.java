@@ -1,6 +1,7 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,26 +19,28 @@ public class Agreement {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "agreement_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    Integer id;
-    Integer product_id;
-    String general_agreement_id;
-    ArrangementType arrangement_type;
-    Long sheduler_job_id;
-    String number;
-    Date opening_date;
-    Date closing_date;
-    Date cancel_date;
-    Integer validity_duration;
-    String cancellation_reason;
-    String status;
-    Date interest_calculation_date;
-    Double interest_rate;
-    Double coefficient;
-    String coefficient_action;
-    Double  minimum_interest_rate;
-    Double minimum_interest_rate_coefficient;
-    String minimum_interest_rate_coefficient_action;
-    Double  maximal_interest_rate;
-    Double maximal_interest_rate_coefficient;
-    String maximal_interest_rate_coefficient_action;
+    private Integer id;
+    private Integer product_id;
+    private String general_agreement_id;
+    private ArrangementType arrangement_type;
+    private Long sheduler_job_id;
+
+    private String number;
+
+    private Date opening_date;
+    private Date closing_date;
+    private Date cancel_date;
+    private Integer validity_duration;
+    private String cancellation_reason;
+    private String status;
+    private  Date interest_calculation_date;
+    private Double interest_rate;
+    private Double coefficient;
+    private String coefficient_action;
+    private Double  minimum_interest_rate;
+    private Double minimum_interest_rate_coefficient;
+    private String minimum_interest_rate_coefficient_action;
+    private Double  maximal_interest_rate;
+    private Double maximal_interest_rate_coefficient;
+    private String maximal_interest_rate_coefficient_action;
 }

@@ -15,8 +15,8 @@ public class Account {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "account_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    int id;
-    int account_pool_id ;
-    String account_number;
-    boolean bussy;
+    private int id;
+    private int account_pool_id ;
+    private String account_number;
+    private boolean bussy;
 }

@@ -15,8 +15,8 @@ public class ResponseProduct {
         List<String> registerId;
         List<String> supplementaryAgreementId;
     }
-    public Result data;
-    public String errorMessage;
+    private  Result data;
+    private  String errorMessage;
     public ResponseProduct() {}
 
 

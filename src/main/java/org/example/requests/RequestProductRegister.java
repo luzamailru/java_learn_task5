@@ -6,14 +6,14 @@ import lombok.Data;
 @Data
 
 public class RequestProductRegister {
-    Integer instanceID;
-    String  registryTypeCode;
-    String currencyCode;
-    String branchCode;
-    String priorityCode;
-    String mdmCode;
-    String clientCode;
-    String trainRegion;
-    String counter;
-    String salesCode;
+    private Integer instanceID;
+    private String  registryTypeCode;
+    private String currencyCode;
+    private String branchCode;
+    private String priorityCode;
+    private String mdmCode;
+    private String clientCode;
+    private String trainRegion;
+    private String counter;
+    private String salesCode;
 }

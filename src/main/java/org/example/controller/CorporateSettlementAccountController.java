@@ -1,14 +1,14 @@
 package org.example.controller;
 
 import lombok.AllArgsConstructor;
+import org.example.exception.BusinessException;
 import org.example.requests.RequestProductRegister;
 import org.example.service.CorporateSettlementAccountService;
 import org.example.response.ResponseSettlementAccountService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @AllArgsConstructor
@@ -18,9 +18,10 @@ public class CorporateSettlementAccountController {
 
     @PostMapping
     @RequestMapping("/create")
-    public ResponseEntity<String> create(@RequestBody RequestProductRegister requestProductRegister) {
+    public ResponseEntity<String> create(@RequestBody RequestProductRegister requestProductRegister) throws BusinessException {
+
         ResponseSettlementAccountService responseSettlementAccountService =
-                corporateSettlementAccountService.create(Long.valueOf(requestProductRegister.getInstanceID()),
+                corporateSettlementAccountService.create(requestProductRegister.getInstanceID(),
                         requestProductRegister.getBranchCode(),
                         requestProductRegister.getRegistryTypeCode(),
                         requestProductRegister.getCurrencyCode(),
@@ -30,10 +31,16 @@ public class CorporateSettlementAccountController {
                         requestProductRegister.getTrainRegion(),
                         requestProductRegister.getCounter(),
                         requestProductRegister.getSalesCode());
-        if (responseSettlementAccountService.getAnswer() == null) {
             return new ResponseEntity<>(responseSettlementAccountService.getAnswer(), responseSettlementAccountService.getStatus());
-        } else
-            return new ResponseEntity<>(responseSettlementAccountService.getErrorMessage(), responseSettlementAccountService.getStatus());
 
+    }
+    @ExceptionHandler({BusinessException.class})
+    public ResponseEntity<String> businessExceptionHandler(BusinessException e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatusCode.valueOf(e.getMessageCode()));
+    }
+
+    @ExceptionHandler({RuntimeException.class})
+    public ResponseEntity<String>  runtimeExceptionHandler(RuntimeException e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

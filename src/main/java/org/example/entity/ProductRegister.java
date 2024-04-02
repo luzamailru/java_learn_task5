@@ -16,11 +16,11 @@ public class ProductRegister {
     @Id
     @SequenceGenerator(name = "sequence", sequenceName = "tpp_product_register_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
-    Integer id;
-    Long product_id;
-    String type;
-    Long account;
-    String currency_code;
-    String state;
-    String account_number;
+    private Integer id;
+    private Integer product_id;
+    private String type;
+    private Long account;
+    private String currency_code;
+    private String state;
+    private String account_number;
 }

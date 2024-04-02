@@ -13,8 +13,8 @@ import lombok.Setter;
         private class AccountID{
             int accountID;
         }
-        public org.example.response.ResponseProductRegister.AccountID data;
-        public String errorMessage;
+        private org.example.response.ResponseProductRegister.AccountID data;
+        private String errorMessage;
         public ResponseProductRegister() {}
 
 
